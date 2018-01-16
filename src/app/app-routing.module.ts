@@ -9,7 +9,8 @@ import {CarFormComponent} from './components/car-form/car-form.component';
 const appRoutes: Routes = [
     {path: '', component: CarsComponent},
     {path: 'cars', component: CarsComponent},
-    {path: 'add', component: CarFormComponent}
+    {path: 'add', component: CarFormComponent},
+    {path: 'edit/:id', component: CarFormComponent}
 ];
 
 @NgModule({

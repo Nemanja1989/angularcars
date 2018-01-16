@@ -40,7 +40,7 @@ export class CarService {
                 numberOfDoors: 5
             },
             {
-                id: 3,
+                id: 4,
                 mark: 'BMW',
                 model: 'M5',
                 year: '2017',
@@ -66,6 +66,20 @@ export class CarService {
     addCar(car) {
         car['id'] = this.idCount++;
         this.cars.push(car);
+    }
+
+    editCar(car) {
+        this.cars.splice(this.cars.indexOf(car), 1, car);
+    }
+
+    public getById(id) {
+        let selectedCar;
+        this.cars.forEach((car) => {
+            if (car.id === id) {
+                selectedCar = car;
+            }
+        });
+        return selectedCar;
     }
 
 
