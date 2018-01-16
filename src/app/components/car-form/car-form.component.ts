@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class CarFormComponent implements OnInit {
 
-    private car: Car;
+    public car: Car;
     public years = [];
 
     constructor(private _carsService: CarService,
@@ -26,6 +26,19 @@ export class CarFormComponent implements OnInit {
         this._carsService.addCar(this.car);
         this.router.navigate(['/cars']);
     }
+
+    public showPreview() {
+        alert(`
+            Mark: ${this.car.mark},
+            Model: ${this.car.model},
+            Engine: ${this.car.engine},
+            Year: ${this.car.year},
+            Number of doors: ${this.car.numberOfDoors},
+            Max speed: ${this.car.maxSpeed},
+            Type of engine: ${this.car.isAutomatic},
+        `);
+    }
+
 
 
     ngOnInit() {
