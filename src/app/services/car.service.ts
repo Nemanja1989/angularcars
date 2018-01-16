@@ -5,6 +5,7 @@ import {Car} from '../models/car';
 export class CarService {
 
     private cars;
+    private idCount = 0;
 
     constructor() {
         this.cars = [
@@ -49,10 +50,23 @@ export class CarService {
                 numberOfDoors: 5
             }
         ];
+
+        // get bigest ID
+        for (let i = 0; i <= this.cars.length - 1; i++) {
+            if (this.cars[i]['id'] > this.idCount) {
+                this.idCount = this.cars[i]['id'];
+            }
+        }
     }
 
     getCars() {
         return this.cars;
     }
+
+    addCar(car) {
+        car['id'] = this.idCount++;
+        this.cars.push(car);
+    }
+
 
 }

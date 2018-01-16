@@ -9,16 +9,20 @@ import {LayoutComponent} from './components/layout/layout.component';
 import {CarsComponent} from './components/cars/cars.component';
 import {NavbarComponent} from './components/navbar/navbar.component';
 import {CarService} from './services/car.service';
+import { CarFormComponent } from './components/car-form/car-form.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [
         AppComponent,
         LayoutComponent,
         CarsComponent,
-        NavbarComponent
+        NavbarComponent,
+        CarFormComponent
     ],
     imports: [
         BrowserModule,
+        FormsModule,
         AppRoutingModule
     ],
     providers: [

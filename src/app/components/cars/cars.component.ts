@@ -9,7 +9,7 @@ import {Car} from '../../models/car';
 })
 export class CarsComponent implements OnInit {
 
-    public cars: Car = [];
+    public cars: Car;
 
     constructor(private _carsService: CarService) {
         this.cars = this._carsService.getCars();
